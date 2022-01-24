@@ -34,7 +34,7 @@
             </div>
         </div>
     </header>
-    <div class="container" style="position: absolute;top:500px;left: 1600px;">
+    <div class="container" style="position: absolute;top:505px;left: 1438px;">
         <form action="bari_distribuzione.php" style="position: absolute;top:-60px;left: 150px;" method="Post" id="form">
             <input class="display-box" type="number" id="result" disabled>
             <input type="hidden" id="result_hidden" name="value">
@@ -54,26 +54,32 @@
         </div>
     </div>
 
-    <div style="position: absolute;top:300px;left: 510px;">
-        <span style="position: absolute; top: -18px; right: 19px; font-size: 14px; font-weight: 800;">13</span>
+    <div style="position: absolute;top:313px;left: 511px;">
+        <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/cocacola.png">
     </div>
-    <div style="position: absolute;top:300px;left: 690px;">
+    <div style="position: absolute;top:312px;left: 692px;">
+    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/fanta.png">
     </div>
-    <div style="position: absolute;top:470px;left: 483px;">
+    <div style="position: absolute;top:472px;left: 490px;">
+    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/pepsi.png">
     </div>
-    <div style="position: absolute;top:470px;left: 610px;">
+    <div style="position: absolute;top:472px;left: 605px;">
+    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/peroni.png">
     </div>
-    <div style="position: absolute;top:470px;left: 740px;">
+    <div style="position: absolute;top:472px;left: 721px;">
+    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/sprite.png">
     </div>
-    <div style="position: absolute;top:627px;left: 510px;">
+    <div style="position: absolute;top:654px;left: 510px;">
+    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/acqua_frizzante.png">
     </div>
-    <div style="position: absolute;top:627px;left: 690px;">
+    <div style="position: absolute;top:654px;left: 693px;">
+    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/acqua_naturale.png">
     </div>
 
