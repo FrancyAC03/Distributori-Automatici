@@ -1,14 +1,10 @@
 <?php
-session_start();
-$val1=null;
-if(isset($_POST["bottone1"]))
-{
-    $_SESSION["val1"] = $_POST["bottone1"];
-}
-if(isset($_SESSION["val1"]))
-{
-  $val1=$_SESSION["val1"];
-}
+    require_once('../../open_php.php');
+
+    if (isset($_POST["value"])) {
+        echo $_POST["value"];
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,18 +22,10 @@ if(isset($_SESSION["val1"]))
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../.css/demo.css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <script>
-        window.onload = function() {
-            document.getElementsByName("bottone").onclick = function() {
-                document.getElementsByName("postvar")[0].value = this.value;
-                document.forms.myform.submit();
-            }
-        };
-    </script>
-
     <header class="ScriptHeader">
         <div class="rt-container">
             <div class="col-rt-12" style="float: left;">
@@ -46,45 +34,64 @@ if(isset($_SESSION["val1"]))
             </div>
         </div>
     </header>
-    <input style="position: absolute;top:270px;left: 1275px;" class="display-box" type="text" id="result" disabled value>
     <div class="container" style="position: absolute;top:500px;left: 1600px;">
-        <form action="" method="Post">
-            <input type="hidden" name="postvar" value="" />
-            <input type="submit" value="1" name="bottone1">
-            <input type="submit" value="2" name="bottone2">
-            <input type="submit" value="3" name="bottone3"><br>
-            <input type="submit" value="4" name="bottone4">
-            <input type="submit" value="5" name="bottone5">
-            <input type="submit" value="6" name="bottone6"><br>
-            <input type="reset" value="C" name="bottonec">
-            <input style="text-align: center;" type="button" value="7" name="bottone7">
-            <input type="submit" value="OK" name="invia"><br>
+        <form action="bari_distribuzione.php" style="position: absolute;top:-60px;left: 150px;" method="Post" id="form">
+            <input class="display-box" type="number" id="result" disabled>
+            <input type="hidden" id="result_hidden" name="value">
         </form>
+
+        <div id="bottoni">
+            <input type="hidden" name="postvar" value="" />
+            <input type="submit" value="1">
+            <input type="submit" value="2">
+            <input type="submit" value="3"><br>
+            <input type="submit" value="4">
+            <input type="submit" value="5">
+            <input type="submit" value="6"><br>
+            <input type="reset" value="C">
+            <input style="text-align: center;" type="button" value="7">
+            <input type="submit" value="OK"><br>
+        </div>
     </div>
 
     <div style="position: absolute;top:300px;left: 510px;">
+        <span style="position: absolute; top: -18px; right: 19px; font-size: 14px; font-weight: 800;">13</span>
         <img class="img" src="../.images/cocacola.png">
     </div>
     <div style="position: absolute;top:300px;left: 690px;">
         <img class="img" src="../.images/fanta.png">
     </div>
-    <div>
-        <div style="position: absolute;top:470px;left: 483px;">
-            <img class="img" src="../.images/pepsi.png">
-        </div>
-        <div style="position: absolute;top:470px;left: 610px;">
-            <img class="img" src="../.images/peroni.png">
-        </div>
-        <div style="position: absolute;top:470px;left: 740px;">
-            <img class="img" src="../.images/sprite.png">
-        </div>
-        <div style="position: absolute;top:627px;left: 510px;">
-            <img class="img" src="../.images/acqua_frizzante.png">
-        </div>
-        <div style="position: absolute;top:627px;left: 690px;">
-            <img class="img" src="../.images/acqua_naturale.png">
-        </div>    
-</body>
-</body>
+    <div style="position: absolute;top:470px;left: 483px;">
+        <img class="img" src="../.images/pepsi.png">
+    </div>
+    <div style="position: absolute;top:470px;left: 610px;">
+        <img class="img" src="../.images/peroni.png">
+    </div>
+    <div style="position: absolute;top:470px;left: 740px;">
+        <img class="img" src="../.images/sprite.png">
+    </div>
+    <div style="position: absolute;top:627px;left: 510px;">
+        <img class="img" src="../.images/acqua_frizzante.png">
+    </div>
+    <div style="position: absolute;top:627px;left: 690px;">
+        <img class="img" src="../.images/acqua_naturale.png">
+    </div>
 
+    <script>
+        let input_principale = $("form input")
+        let input_hidden = $("#result_hidden"); // questa è l'input che viene inviata al server php.
+        let form = $("#form")
+        $("div#bottoni input").click(function () {
+            if ($(this).val() === 'C') {
+                input_principale.val('')
+                input_hidden.val('')
+            } else if ($(this).val() === 'OK' && input_principale.val() !== '' && input_principale.val() !== null) {
+                form.submit()
+            } else {
+                input_principale.val($(this).val())
+                input_hidden.val($(this).val())
+            }
+        })
+    </script>
+</body>
 </html>

@@ -1,6 +1,3 @@
-CREATE DATABASE GestireDistributori;
-USE GestireDistributori;
- 
 CREATE TABLE Bevande
 (
 IdBevanda Integer auto_increment not null primary key,

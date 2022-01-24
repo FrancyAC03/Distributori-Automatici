@@ -1,7 +1,11 @@
 <?php
+//$servername = "localhost";
+//$username = "distributori";
+//$password = "distributorita";
+
 $servername = "localhost";
-$username = "distributori";
-$password = "distributorita";
+$username = "root";
+$password = "";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password);
