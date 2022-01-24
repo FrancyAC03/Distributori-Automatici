@@ -1,3 +1,15 @@
+<?php
+session_start();
+$val1=null;
+if(isset($_POST["bottone1"]))
+{
+    $_SESSION["val1"] = $_POST["bottone1"];
+}
+if(isset($_SESSION["val1"]))
+{
+  $val1=$_SESSION["val1"];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,18 +46,18 @@
             </div>
         </div>
     </header>
-    <input style="position: absolute;top:270px;left: 1275px;" class="display-box" type="text" id="result" disabled>
+    <input style="position: absolute;top:270px;left: 1275px;" class="display-box" type="text" id="result" disabled value>
     <div class="container" style="position: absolute;top:500px;left: 1600px;">
-        <form action="open.php" method="Post">
+        <form action="" method="Post">
             <input type="hidden" name="postvar" value="" />
-            <input type="submit" value="1" name="bottone">
-            <input type="submit" value="2" name="bottone">
-            <input type="submit" value="3" name="bottone"><br>
-            <input type="submit" value="4" name="bottone">
-            <input type="submit" value="5" name="bottone">
-            <input type="submit" value="6" name="bottone"><br>
-            <input type="reset" value="C" name="bottone">
-            <input style="text-align: center;" type="button" value="7" name="bottone">
+            <input type="submit" value="1" name="bottone1">
+            <input type="submit" value="2" name="bottone2">
+            <input type="submit" value="3" name="bottone3"><br>
+            <input type="submit" value="4" name="bottone4">
+            <input type="submit" value="5" name="bottone5">
+            <input type="submit" value="6" name="bottone6"><br>
+            <input type="reset" value="C" name="bottonec">
+            <input style="text-align: center;" type="button" value="7" name="bottone7">
             <input type="submit" value="OK" name="invia"><br>
         </form>
     </div>
@@ -71,18 +83,7 @@
         </div>
         <div style="position: absolute;top:627px;left: 690px;">
             <img class="img" src="../.images/acqua_naturale.png">
-        </div>
-
-
-
-
-        <div id="transition"></div>
-        <script>
-            function Inviadati(n) {
-
-            }
-        </script>
-        <script src="../../pagine/.js/transition.js"></script>
+        </div>    
 </body>
 </body>
 
