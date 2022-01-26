@@ -16,7 +16,7 @@ require_once("../admin/head.php");
         <div class="rt-container">
             <div class="col-rt-12" style="float: left;">
                 <h1 class="rt-heading" style="font-size:50px">Seleziona il codice del prodotto</h1>
-                <img src="../.images/bari_distribuzione.png" style="width: 50%;">
+                <img src="../../Distributori.grafica\Bari Distributore.png" style="width: 50%;">
             </div>
         </div>
     </header>
