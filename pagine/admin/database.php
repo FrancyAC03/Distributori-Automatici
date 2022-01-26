@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
-    <link rel="stylesheet" href="../.css/admin.css">
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
+    <?php
+require_once("head.php");
+?>
 <body>
     <div class="sidebar">
         <div class="logo-details">
@@ -220,7 +213,7 @@
 
 
 <div id="transition"></div>
-<script src=".js/transition.js"></script>
+<script src="../.js/transition.js"></script>
 </body>
 
 </html>

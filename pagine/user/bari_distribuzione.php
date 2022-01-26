@@ -8,23 +8,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distributori Automatici</title>
-    <meta name="author" content="Codeconvey" />
-
-    <link rel="stylesheet" href="../.css/style.css">
-    <link rel="stylesheet" href="../.css/form.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../.css/demo.css" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-
+<?php
+require_once("../admin/head.php");
+?>
 <body>
     <header class="ScriptHeader">
         <div class="rt-container">
