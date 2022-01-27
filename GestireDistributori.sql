@@ -1,3 +1,5 @@
+CREATE DATABASE GestireDistributori;
+USE GestireDistributori;
 CREATE TABLE Bevande
 (
 IdBevanda Integer auto_increment not null primary key,
@@ -12,7 +14,7 @@ CREATE TABLE Distributori
 (
 IdDistributore Integer auto_increment not null primary key,
 Nome Varchar(30) not null,
-FlagAttivo Boolean not null
+FlagAttivo Integer not null
 );
  
  
@@ -43,13 +45,12 @@ INSERT INTO Distributori
 (Nome,FlagAttivo)
 values
 ("H24",true),
-("BariDistribuzione",false),
-("DistributoreStark",true),
-("RedDispenser",true),
-("DistriPuglia",false),
-("NiciosDispenser",false),
-("GrumoDispenser",true),
-("SqueoDispenser",true);
+("BariDistribuzione",0),
+("RedDispenser",1),
+("DistriPuglia",0),
+("NiciosDispenser",0),
+("GrumoDispenser",1),
+("SqueoDispenser",1);
  
 INSERT INTO Contenere
 (IdDistributore,IdBevanda,Quantità)

@@ -1,12 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
     <?php
+    //UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '1' WHERE `distributori`.`IdDistributore` = 2
+        require_once("../../open_php.php");
+                                
+
+        
+                            if(isset($_POST["salva"]))
+                            {
+                                if(isset($_POST["cb1"]))
+                                {
+                                    $cb1=$_POST["cb1"];
+                                    $sqlcb1="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '1' WHERE `distributori`.`IdDistributore` = 1";
+                                    $resultcb1 = mysqli_query($conn, $sqlcb1);
+                                }
+                                else{
+                                    $cb1=null;
+                                    if($cb1==null)
+                                    {
+                                    $sqlcb1="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '0' WHERE `distributori`.`IdDistributore` = 1";
+                                    $resultcb1 = mysqli_query($conn, $sqlcb1);
+                                    }
+                                    }
+                                    if(isset($_POST["cb2"]))
+                                {
+                                    $cb2=$_POST["cb2"];
+                                    $sqlcb2="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '1' WHERE `distributori`.`IdDistributore` = 2";
+                                    $resultcb2 = mysqli_query($conn, $sqlcb2);
+                                }
+                                else{
+                                    $cb2=null;
+                                    if($cb2==null)
+                                    {
+                                    $sqlcb2="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '0' WHERE `distributori`.`IdDistributore` = 2";
+                                    $resultcb2 = mysqli_query($conn, $sqlcb2);
+                                    }
+                                    }
+                                    if(isset($_POST["cb3"]))
+                                {
+                                    $cb3=$_POST["cb3"];
+                                    $sqlcb3="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '1' WHERE `distributori`.`IdDistributore` = 3";
+                                    $resultcb3 = mysqli_query($conn, $sqlcb3);
+                                }
+                                else{
+                                    $cb3=null;
+                                    if($cb3==null)
+                                    {
+                                    $sqlcb3="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '0' WHERE `distributori`.`IdDistributore` = 3";
+                                    $resultcb3 = mysqli_query($conn, $sqlcb3);
+                                    }
+                                    }
+                                    if(isset($_POST["cb4"]))
+                                {
+                                    $cb4=$_POST["cb4"];
+                                    $sqlcb4="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '1' WHERE `distributori`.`IdDistributore` = 4";
+                                    $resultcb4 = mysqli_query($conn, $sqlcb4);
+                                }
+                                else{
+                                    $cb4=null;
+                                    if($cb4==null)
+                                    {
+                                    $sqlcb4="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '0' WHERE `distributori`.`IdDistributore` = 4";
+                                    $resultcb4 = mysqli_query($conn, $sqlcb4);
+                                    }
+                                    }
+                                    if(isset($_POST["cb5"]))
+                                {
+                                    $cb5=$_POST["cb5"];
+                                    $sqlcb5="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '1' WHERE `distributori`.`IdDistributore` = 5";
+                                    $resultcb5 = mysqli_query($conn, $sqlcb5);
+                                }
+                                else{
+                                    $cb5=null;
+                                    if($cb5==null)
+                                    {
+                                    $sqlcb5="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '0' WHERE `distributori`.`IdDistributore` = 5";
+                                    $resultcb5 = mysqli_query($conn, $sqlcb5);
+                                    }
+                                }
+                                    if(isset($_POST["cb6"]))
+                                {
+                                    $cb6=$_POST["cb6"];
+                                    $sqlcb6="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '1' WHERE `distributori`.`IdDistributore` = 6";
+                                    $resultcb6 = mysqli_query($conn, $sqlcb6);
+                                }
+                                else{
+                                    $cb6=null;
+                                    if($cb6==null)
+                                    {
+                                    $sqlcb6="UPDATE `gestiredistributori`.`distributori` SET `FlagAttivo` = '0' WHERE `distributori`.`IdDistributore` = 6";
+                                    $resultcb6 = mysqli_query($conn, $sqlcb6);
+                                    }
+                                    
+                            }
+
+                        }
+                        
+        $sql="SELECT Nome,FlagAttivo,IdDistributore FROM distributori ORDER BY IdDistributore ASC ";
+        $result = mysqli_query($conn, $sql);
+        $result2 = mysqli_query($conn, $sql);
+        $result3 = mysqli_query($conn, $sql);
+    // output data of each row
 require_once("head.php");
 ?>
+
 <body>
     <div class="sidebar">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
+        <i class='bx bx-shield-quarter'></i>
             <span class="logo_name">Admin Page</span>
         </div>
         <ul class="nav-links">
@@ -18,12 +119,12 @@ require_once("head.php");
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-box'></i>
-                    <span class="links_name">Product</span>
+                <i class='bx bxs-user-plus'></i>
+                    <span class="links_name">About us</span>
                 </a>
             </li>
             <li class="log_out">
-                <a href="index.html">
+                <a href="../index.html">
                     <i class='bx bx-log-out'></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -40,39 +141,6 @@ require_once("head.php");
 
         <div class="home-content">
             <div class="overview-boxes">
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Order</div>
-                        <div class="number">40,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart-alt cart'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Profit</div>
-                        <div class="number">$12,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart cart three'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Return</div>
-                        <div class="number">11,086</div>
-                        <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Down From Today</span>
-                        </div>
-                    </div>
-                    <i class='bx bxs-cart-download cart four'></i>
-                </div>
             </div>
 
             <?php
@@ -92,50 +160,44 @@ require_once("head.php");
                     <div class="title" style="text-align:center">Distributori</div>
                     <div class="sales-details">
                         <ul class="details">
-                            <li class="topic">Nome Distributore</li>
-                            <li><a href="#">Bari Distribuzione</a></li>
-                            <li><a href="#">Grumo Dispenser</a></li>
-                            <li><a href="#">Squeo Dispenser</a></li>
-                            <li><a href="#">Nicios Dispenser</a></li>
-                            <li><a href="#">Distri Puglia</a></li>
-                            <li><a href="#">H24</a></li>
+                            <li class="topic"><?php while($row = mysqli_fetch_assoc($result))
+                                    { echo  '<li><a href="#">'. $row["Nome"] .'</a></li>';} 
+                                    ?>
                         </ul>
                         <ul class="details">
                         <center>
-                        <form action="../user.php" method="post">
+                        <form action="database.php" method="post">
                             <li class="topic">Acceso/Spento</li>
-                            <li>
-                                <label class="switch">
-                                <input type="checkbox" name="bari"<?php echo "checked"?> >
-                                <span class="slider"></span>
-                            </label></li>
-                            <li>
-                                <label class="switch">
-                                <input type="checkbox" name="grumo" <?php echo "checked";?>>
-                                <span class="slider"></span>
-                            </label></li>
-                            <li>
-                                <label class="switch">
-                                <input type="checkbox" name="squeo" <?php echo "checked";?>>
-                                <span class="slider"></span>
-                            </label></li>
-                            <li>
-                                <label class="switch">
-                                <input type="checkbox" name="nicios" <?php echo "checked";?>>
-                                <span class="slider"></span>
-                            </label></li>
-                            <li>
-                                <label class="switch">
-                                <input type="checkbox" name="distri" <?php echo "checked";?>>
-                                <span class="slider"></span>
-                            </label></li>
-                            <li>
-                                <label class="switch">
-                                <input type="checkbox" name="h24" <?php  echo "checked";?>>
-                                <span class="slider"></span>
-                            </label></li>
-                            <input type="submit" value="Salva">
+                            <?php
+                            while($row = mysqli_fetch_assoc($result2))
+                            { 
+                                
+                                
+                                while($row=mysqli_fetch_assoc($result3))
+                                {
+                                    echo  '<li><label class="switch"><input type="checkbox" name="cb'.$row["IdDistributore"].'"';
+                                     echo 'value="'.$row["Nome"].'"';
+                                    
+                                        if($row["FlagAttivo"]==1)
+                                            {
+                                                echo "checked>";
+                                            }
+                                            else 
+                                            {
+                                                echo "unchecked>";
+                                            }
+                                    
+                                     echo'<span class="slider"></span> </label></li>';
+                                }
+                            }
+                            ?>
+                            
+                            <div class="button">
+                            <input type="submit"  name="salva" value="Salva">
+                    </div>
+                            
                             </form>
+                            
                             </center>
                         </ul>
                         <ul class="details">
@@ -173,16 +235,14 @@ require_once("head.php");
             } else
                 sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
         }
-    </script>
 
+    </script>
 </body>
 
 </html>
 
 
 
-<div id="transition"></div>
-<script src="../.js/transition.js"></script>
-</body>
 
+</body>
 </html>
