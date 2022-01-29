@@ -1,59 +1,42 @@
-CREATE DATABASE GestireDistributori;
-USE GestireDistributori;
-CREATE TABLE Bevande
-(
-IdBevanda Integer auto_increment not null primary key,
-Nome Varchar(30) not null,
-Tipo Varchar(30) not null,
-Costo Decimal(6,2) not null,
-CHECK (Costo>0)
-);
- 
- 
-CREATE TABLE Distributori
-(
-IdDistributore Integer auto_increment not null primary key,
-Nome Varchar(30) not null,
-FlagAttivo Integer not null
-);
- 
- 
-CREATE TABLE Contenere
-(
-IdContenere Integer auto_increment not null primary key,
-IdDistributore Integer not null,
-IdBevanda Integer not null,
-Quantità Integer not null,
-FOREIGN KEY(IdDistributore) REFERENCES Distributori(IdDistributore),
-FOREIGN KEY(IdBevanda) REFERENCES Bevande(IdBevanda)
-);
- 
- 
-INSERT INTO Bevande
-(Nome,Tipo,Costo)
-values
-("CocaCola","Bevanda Gassata", 1),
-("Aranciata","Bevanda Gassata", 2),
-("Acqua Liscia","Bevanda Liscia", 0.50),
-("Acqua Gassata","Bevanda Gassata", 0.50),
-("Peroni","Birra", 3),
-("Sprite","Bevanda Gassata", 1.50),
-("Pepsi","Bevanda Gassata", 1.50);
- 
- 
-INSERT INTO Distributori
-(Nome,FlagAttivo)
-values
-("H24",true),
-("BariDistribuzione",0),
-("RedDispenser",1),
-("DistriPuglia",0),
-("NiciosDispenser",0),
-("GrumoDispenser",1),
-("SqueoDispenser",1);
- 
+CREATE database GestireDistributori;
+use GestireDistributori;
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+
+CREATE TABLE IF NOT EXISTS `bevande` (
+  `IdBevanda` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(30) NOT NULL,
+  `Tipo` varchar(30) NOT NULL,
+  PRIMARY KEY (`IdBevanda`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+INSERT INTO `bevande` (`IdBevanda`, `Nome`, `Tipo`) VALUES
+(1, 'CocaCola', 'Bevanda Gassata'),
+(2, 'Aranciata', 'Bevanda Gassata'),
+(3, 'Pepsi', 'Bevanda Gassata'),
+(4, 'Peroni', 'Birra'),
+(5, 'Sprite', 'Bevanda Gassata'),
+(6, 'Acqua Frizzante', 'Bevanda Gassata'),
+(7, 'Acqua Liscia', 'Bevanda Liscia');
+
+
+CREATE TABLE IF NOT EXISTS `contenere` (
+  `IdContenere` int(11) NOT NULL AUTO_INCREMENT,
+  `IdDistributore` int(11) NOT NULL,
+  `IdBevanda` int(11) NOT NULL,
+  `Quantita` int(11) NOT NULL,
+  PRIMARY KEY (`IdContenere`),
+  KEY `contenere_ibfk_1` (`IdDistributore`),
+  KEY `contenere_ibfk_2` (`IdBevanda`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 INSERT INTO Contenere
-(IdDistributore,IdBevanda,Quantità)
+(IdDistributore,IdBevanda,Quantita)
 values
 (1,1,20),
 (1,2,10),
@@ -104,3 +87,24 @@ values
 (7,5,20),
 (7,6,30),
 (7,7,30);
+
+
+CREATE TABLE IF NOT EXISTS `distributori` (
+  `IdDistributore` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(30) NOT NULL,
+  `FlagAttivo` int(11) NOT NULL,
+  PRIMARY KEY (`IdDistributore`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+INSERT INTO `distributori` (`IdDistributore`, `Nome`, `FlagAttivo`) VALUES
+(1, 'H24', 1),
+(2, 'BariDistribuzione', 0),
+(3, 'DistriPuglia', 0),
+(4, 'NiciosDispenser', 0),
+(5, 'GrumoDispenser', 1),
+(6, 'SqueoDispenser', 1);
+
+
+

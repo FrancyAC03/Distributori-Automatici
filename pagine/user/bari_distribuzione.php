@@ -1,16 +1,27 @@
 <?php
-    require_once('../../open_php.php');
-
+    require_once('../../open_php_user.php');
     if (isset($_POST["value"])) {
-        echo $_POST["value"];
+        $a=$_POST["value"];
+        
+            if ($a==1){
+                $decremento="UPDATE gestiredistributori.contenere SET Quantita=Quantita-1 WHERE contenere.IdContenere =1";
+                $resultd=mysqli_query($conn,$decremento);
+            }
 
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <?php
 require_once("../admin/head.php");
-?>
+ $sql="SELECT Quantita FROM Contenere WHERE  IdDistributore = 1"; 
+ $result=mysqli_query($conn,$sql);
+ $quantita=array();
+ while($row=mysqli_fetch_array($result))
+ {
+     array_push($quantita,$row["Quantita"]);
+ }
+ ?>
 <body>
     <header class="ScriptHeader">
         <div class="rt-container">
@@ -39,33 +50,32 @@ require_once("../admin/head.php");
             <input type="submit" value="OK"><br>
         </div>
     </div>
-
     <div style="position: absolute;top:313px;left: 511px;">
-        <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
+        <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;"><?php echo $quantita[0];?></span>
         <img class="img" src="../.images/cocacola.png">
     </div>
     <div style="position: absolute;top:312px;left: 692px;">
-    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
+    <span style="position: absolute; top: -28px;right: 40px; font-size: 14px; font-weight: 800;"><?php echo $quantita[1];?></span>
         <img class="img" src="../.images/fanta.png">
     </div>
     <div style="position: absolute;top:472px;left: 490px;">
-    <span style="position: absolute; top: -20px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
+    <span style="position: absolute; top: -20px;right: 40px; font-size: 14px; font-weight: 800;"><?php echo $quantita[2];?></span>
         <img class="img" src="../.images/pepsi.png">
     </div>
     <div style="position: absolute;top:472px;left: 605px;">
-    <span style="position: absolute; top: -20px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
+    <span style="position: absolute; top: -20px;right: 40px; font-size: 14px; font-weight: 800;"><?php echo $quantita[3];?></span>
         <img class="img" src="../.images/peroni.png">
     </div>
     <div style="position: absolute;top:472px;left: 721px;">
-    <span style="position: absolute; top: -20px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
+    <span style="position: absolute; top: -20px;right: 40px; font-size: 14px; font-weight: 800;"><?php echo $quantita[4];?></span>
         <img class="img" src="../.images/sprite.png">
     </div>
     <div style="position: absolute;top:654px;left: 510px;">
-    <span style="position: absolute; top: -14px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
+    <span style="position: absolute; top: -14px;right: 40px; font-size: 14px; font-weight: 800;"><?php echo $quantita[5];?></span>
         <img style="width:80%"class="img" src="../.images/acqua_frizzante.png">
     </div>
     <div style="position: absolute;top:654px;left: 693px;">
-    <span style="position: absolute; top: -14px;right: 40px; font-size: 14px; font-weight: 800;">13</span>
+    <span style="position: absolute; top: -14px;right: 40px; font-size: 14px; font-weight: 800;"><?php echo $quantita[6];?></span>
         <img style="width:80%"class="img" src="../.images/acqua_naturale.png">
     </div>
 
