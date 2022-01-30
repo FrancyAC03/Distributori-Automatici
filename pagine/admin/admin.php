@@ -8,7 +8,7 @@
         header('Location: ' . $url, true, 301);
      }
      else{
-         $msg = "LOGIN ERRATO";
+         $msg = "<br><br>LOGIN ERRATO";
      }
  }
 ?>
@@ -38,7 +38,7 @@ require_once("head.php");
                 <span></span>
                 <input type="submit" value="Invia" name="invia" style= "background-color:transparent ; border-color:transparent ; color:white;font-size: 20px;font-weight:bold">
             </a>
-            <span><?php echo $msg; ?></span>
+            <span style="color:white;font-size: 20px;font-weight:bold"><?php echo $msg; ?></span>
             </center>
             <!--That's all-->
         </form>

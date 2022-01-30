@@ -46,7 +46,7 @@
                 }
         }
         if ($a==7){
-            if($quantita_[0]!=0){
+            if($quantita_[6]!=0){
                 $decremento="UPDATE gestiredistributori.contenere SET Quantita=Quantita-1 WHERE contenere.IdContenere =21";
                 $resultd=mysqli_query($conn,$decremento);
                 }
@@ -149,7 +149,7 @@ require_once("../admin/head.php");
                                                                                                        }
                                                                                                        else
                                                                                                        {echo $quantita[5];}?></span>
-        <img style="width:80%"class="img" src="../.images/acqua_frizzante.png"<?php if($quantita[5]==0){echo 'style="opacity:0%"';}?>>
+       <img style="width:80%<?php if($quantita[5]==0){echo ';opacity:0%;';}?>" class="img" src="../.images/acqua_frizzante.png">
     </div>
     <div style="position: absolute;top:654px;left: 693px;">
     <span style="position: absolute; top: -14px;right: 40px; font-size: 14px; font-weight: 800;"><?php
@@ -158,7 +158,7 @@ require_once("../admin/head.php");
                                                                                                        }
                                                                                                        else
                                                                                                        {echo $quantita[6];}?></span>
-        <img style="width:80%"class="img" src="../.images/acqua_naturale.png"<?php if($quantita[6]==0){echo 'style="opacity:0%"';}?>>
+        <img style="width:80%<?php if($quantita[6]==0){echo ';opacity:0%;';}?>" class="img" src="../.images/acqua_naturale.png">
     </div>
 
     <script>

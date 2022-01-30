@@ -351,6 +351,21 @@ nav .profile-details i {
     justify-content: center;
     
 }
+input[type="submit" i]{
+    color: #fff;
+    background: #0A2558;
+    border-color:#0A2558 ;
+    padding: 4px 12px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+input[type="submit"]:hover  {
+    background: #B15DFF;
+    border-color: #B15DFF;
+}
 
 .sales-boxes .box .button input[type="submit"] {
     color: #fff;
