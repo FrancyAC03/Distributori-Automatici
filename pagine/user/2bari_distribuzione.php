@@ -76,7 +76,7 @@ require_once("../admin/head.php");
         </div>
     </header>
     <div class="container" style="position: absolute;top:505px;left: 1438px;">
-        <form action="3distri_puglia.php" style="position: absolute;top:-60px;left: 150px;" method="Post" id="form">
+        <form action="2bari_distribuzione.php" style="position: absolute;top:-60px;left: 150px;" method="Post" id="form">
             <input class="display-box" type="number" id="result" disabled>
             <input type="hidden" id="result_hidden" name="value">
         </form>
