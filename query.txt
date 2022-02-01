@@ -1,0 +1,4 @@
+SELECT Quantita FROM contenere WHERE IdDistributore= IdDelDistributoreVisualizzato(Variabile PHP)
+SELECT Nome FROM Distributori WHERE  IdDistributore = IdDelDistributoreVisualizzato(Variabile PHP)
+SELECT Bevande.Nome FROM Contenere, Distributori, Bevande WHERE Contenere.IdBevanda = Bevande.IdBevanda && Contenere.IdDistributore = Distributori.IdDistributore && distributori.IdDistributore = $var
+SELECT Quantita FROM Contenere WHERE  IdDistributore = IdDelDistributoreVisualizzato(Variabile Fissa)
